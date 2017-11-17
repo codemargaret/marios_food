@@ -5,7 +5,7 @@ Review.destroy_all
   product = Product.create!(
   name: Faker::Food.unique.ingredient,
   cost: Faker::Number.decimal(2),
-  origin: Faker::LordOfTheRings.location
+  origin: Faker::Address.country
   )
   5.times do
     Review.create!(
