@@ -11,7 +11,8 @@ _Run the following commands in Terminal:_
 2. `$ cd marios_food`
 3. `$ bundle install`
 4. `$ rake db:create`
-5. `$ rails s` _to start the server, then navigate to localhost:3000 in your browser._
+5. `$ rake db:seed`
+6. `$ rails s` _to start the server, then navigate to localhost:3000 in your browser._
 
 ## User Stories
 * _As a user, I want to..._
