@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @reviews = @product.reviews
   end
 
   def new
@@ -17,6 +18,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "Product successfully added!"
       redirect_to products_path
     else
+      flash[:notice] = "Your product was not added."
       render :new
     end
   end
@@ -31,6 +33,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "Product successfully updated!"
       redirect_to products_path
     else
+      flash[:notice] = "Your product was not updated."
       render :edit
     end
   end

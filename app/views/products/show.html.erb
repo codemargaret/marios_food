@@ -4,6 +4,15 @@
 <h1>Cost: <%= @product.cost %></h1>
 <h1>Place of Origin: <%= @product.origin %></h1>
 
+<ul>
+  <% if @reviews.any? %>
+    <% @reviews.each do |review| %>
+      <li>Reviewed by: <%= link_to review.author, product_review_path(review) %></li>
+    <% end %>
+    <% else %>
+      <h2>This product does not have any reviews yet.</h2>
+    <% end %>
+</ul>
 
 <p><%= link_to "Edit Product", edit_product_path(@product) %></p>
 <p><%= link_to "Delete Product", product_path(@product),
