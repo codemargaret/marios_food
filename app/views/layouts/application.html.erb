@@ -11,6 +11,18 @@
   <body>
     <%= flash[:alert] %>
     <%= flash[:notice] %>
-    <%= yield %>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <h1><%= link_to "Mario's Specialty Food Products", root_path %></h1>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
   </body>
 </html>
