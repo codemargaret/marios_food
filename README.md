@@ -1,24 +1,44 @@
-# README
+# Mario's Speciality Food Products
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### _A Rails application that lists food products and reviews, 11.17.2017_
 
-Things you may want to cover:
+## Setup and Installation Instructions
+_This app was created with Ruby 2.4.1_
 
-* Ruby version
+_Run the following commands in Terminal:_
 
-* System dependencies
+1. `$ git clone` [this repository](https://github.com/codemargaret/marios_food.git)
+2. `$ cd marios_food`
+3. `$ bundle install`
+4. `$ rake db:create`
+5. `$ rails s` _to start the server, then navigate to localhost:3000 in your browser._
 
-* Configuration
+## User Stories
+* _As a user, I want to..._
+* _View a landing page with basic info about the company, the three most recently added products, and the product with the most reviews._
+* _View a list of products._
+* _Add, update, and delete products._
+* _Click on an individual product to see details._
+* _Add a review to a product._
+* _Add a review to a product._
 
-* Database creation
+## Future Features
+* _As a user, I want to..._
+* _Show only 10 products at a time._
 
-* Database initialization
+## Bugs
+_There are no known bugs at this time._
 
-* How to run the test suite
+## Technologies Used
+* _Ruby-on-Rails_
+* _ActiveRecord_
 
-* Services (job queues, cache servers, search engines, etc.)
+## Support and contact details
+_If you have any updates, questions, or suggestions please contact [Margaret] or make a contribution._
 
-* Deployment instructions
+[Margaret]: mailto:margaretshelaghmcgovern@gmail.com
 
-* ...
+### License
+MIT License
+
+Copyright (c) 2017 Margaret Berry
