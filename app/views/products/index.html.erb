@@ -1,7 +1,14 @@
 <% content_for(:title, "Mario's Foods") %>
 
-<h1>All Products</h1>
+<h3>About Mario's</h3>
 
+<p>Ever since 1976, Mario's has been providing quality food products to customers at affordable prices. Customer satisfaction is very important to us. That's why we make it is easy to write a product review, and post all product reviews on our site. Tell us what you think!</p>
+
+<a href="?sort=recent"><button class="btn">Most recently added</button></a>
+<a href="?sort=most_reviews"><button class="btn">Most reviews</button></a>
+<p><%= link_to "All Products", root_path %></p>
+
+<h1>Products</h1>
 <ul>
   <% @products.each do |product| %>
     <li><%= link_to product.name, product_path(product) %></li>
@@ -9,5 +16,3 @@
 </ul>
 
 <hr>
-
-<%= link_to "New Product", new_product_path %>

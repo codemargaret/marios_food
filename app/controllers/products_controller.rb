@@ -1,7 +1,15 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
+    if params[:sort] == "recent"
+      @products = Product.recent
+    elsif params[:sort] == "most_reviews"
+      @products = Product.most_reviews
+    else
+      @products = Product.all
+    end
   end
+
 
   def show
     @product = Product.find(params[:id])
