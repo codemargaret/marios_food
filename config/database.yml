@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: marios_food_development
+
+test:
+  <<: *default
+  database: marios_food_test
+
+production:
+  <<: *default
+  database: marios_food_production
+  username: marios_food
+  password: <%= ENV['MARIOS_FOOD_DATABASE_PASSWORD'] %>
