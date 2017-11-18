@@ -21,28 +21,29 @@ class ReviewsController < ApplicationController
     end
   end
 
-#   def edit
-#     @product = Product.find(params[:product_id])
-#     @review = @product.reviews.find(params[:id])
-#   end
-#
-#   def update
-#     @review= Task.find(params[:id])
-#     @product = Product.find(params[:product_id])
-#     if @review.update(review_params)
-#       redirect_to product_path(@review.product)
-#     else
-#       render :edit
-#     end
-#   end
-#
-#   def destroy
-#     @review = Task.find(params[:id])
-#     @review.destroy
-#     redirect_to product_path(@review.product)
-#   end
-#
-#
+  def edit
+    @product = Product.find(params[:product_id])
+    @review = @product.reviews.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:product_id])
+    @review = @product.reviews.find(params[:id])
+    if @review.update(review_params)
+      flash[:notice] = "Review successfully updated!"
+      redirect_to product_review_path(@product, @review)
+    else
+      flash[:notice] = "Your product was not added."
+      render :edit
+    end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to product_path(@review.product)
+  end
+
 private
   def review_params
     params.require(:review).permit(:author, :content_body, :rating)
