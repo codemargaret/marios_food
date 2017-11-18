@@ -4,16 +4,19 @@
 
 <p>Ever since 1976, Mario's has been providing quality food products to customers at affordable prices. Customer satisfaction is very important to us. That's why we make it is easy to write a product review, and post all product reviews on our site. Tell us what you think!</p>
 
-<a href="?sort=recent"><button class="btn">Most recently added</button></a>
-<a href="?sort=most_reviews"><button class="btn">Most reviews</button></a>
-<a href="?sort=usa"><button class="btn">Made in the USA</button></a>
-<button class='btn'><%= link_to "All Products", root_path %></button>
+<a href="?sort=recent"><button class="btn btn-success">Most recently added</button></a>
+<a href="?sort=most_reviews"><button class="btn btn-success">Most reviews</button></a>
+<a href="?sort=usa"><button class="btn btn-success">Made in the USA</button></a>
+<button class='btn btn-success'><%= link_to "All Products", root_path %></button>
 
 <h1>Products</h1>
-<ul>
-  <% @products.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %></li>
-  <% end %>
-</ul>
+<div class="well">
+  <ul>
+    <% @products.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+</div>
+
 
 <hr>

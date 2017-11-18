@@ -13,3 +13,15 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ a:link {
+     color: black;
+ }
+
+ a:visited {
+    color: green;
+}
+
+.navbar {
+  color: black;
+}
