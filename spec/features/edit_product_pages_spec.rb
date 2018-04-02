@@ -17,11 +17,10 @@ describe "the edit a product process" do
     expect(page).to have_content 'errors'
   end
 
-  # it "deletes a product" do
-  #   product = Product.create(:name => 'Lambas Bread', :cost => '10.00', :origin => 'Lorien')
-  #   visit product_path(product)
-  #   click_button 'Delete Product'
-  #   click_on 'OK'
-  #   expect(page).not_to have_content 'Lambas Bread'
-  # end
+  it "deletes a product" do
+    product = Product.create(:name => 'Lambas Bread', :cost => '10.00', :origin => 'Lorien')
+    visit product_path(product)
+    click_button 'Delete Product'
+    expect(page).not_to have_content 'Ever since'
+  end
 end

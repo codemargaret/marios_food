@@ -19,11 +19,11 @@ describe "the edit a review process" do
     expect(page).to have_content 'errors'
   end
 
-  # it "deletes a review" do
-  #   product = Product.create(:name => 'Lambas Bread', :cost => '10.00', :origin => 'Lorien')
-  #   review = Review.create(:author => 'Frodo', :content_body => 'abcdefghjklmnopqrstuvwxyzabcdefghjklmnopqrstuvwxyzabcdefghjklmnopqrstuvwxyz', :rating => '3', :product_id => product.id)
-  #   visit product_review_path(product, review)
-  #   click_on 'Delete Review'
-  #   expect(page).not_to have_content 'Lambas Bread'
-  # end
+  it "deletes a review" do
+    product = Product.create(:name => 'Lambas Bread', :cost => '10.00', :origin => 'Lorien')
+    review = Review.create(:author => 'Frodo', :content_body => 'abcdefghjklmnopqrstuvwxyzabcdefghjklmnopqrstuvwxyzabcdefghjklmnopqrstuvwxyz', :rating => '3', :product_id => product.id)
+    visit product_review_path(product, review)
+    click_on 'Delete Review'
+    expect(page).not_to have_content 'abcdefghjklmnopqrstuvwxyzabcdefghjklmnopqrstuvwxyzabcdefghjklmnopqrstuvwxyz'
+  end
 end
